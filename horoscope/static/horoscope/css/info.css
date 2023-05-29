@@ -1,0 +1,23 @@
+
+p {
+ color: #d2de5;
+ text-align: center;
+ font-family: "Comic Sans MS", "Comic Sans", cursive;
+ font-size: 50px;
+ padding: 110px;
+ margin: -20px
+}
+
+h2 {
+    color: #e8dede;
+    text-align: center;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    margin: 50px;
+}
+
+h1 {
+     text-align: center;
+     font-family: "Andale Mono", AndaleMono, monospace;
+     font-size: 50px;
+     }

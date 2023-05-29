@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href=" {% static 'horoscope/css/info.css' %}">
+{% endblock %}
+
+{% block title %}
+Гороскоп {{translate|upper}}
+{% endblock %}
+
+
+{% block content %}
+    {% include 'includes/nov_bar.html'%}
+    <h1>Приложение Гороскоп</h1>
+    <h1>Описание</h1>
+    {% if description_zodiac is None  %}
+        <h2>Неправильный знак зодиака - {{sign|upper}}</h2>
+    {% else %}
+        <h2>{{translate}}</h2>
+        <p>{{description_zodiac|capfirst|safe}}</p>
+    {% endif %}
+{% endblock %}
