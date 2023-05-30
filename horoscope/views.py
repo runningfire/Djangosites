@@ -41,10 +41,9 @@ translator_dict = {"aries": "Овен",
                    "pisces": "Рыбы"}
 
 def index(request):
-    zodiacs = list(zodiac_dict)
     #f'<li> <a href="{redirect_path}">{sign.title()}</a> </li>'
     context = {
-        'zodiacs': zodiacs,
+        'translate': translator_dict,
         'zodiac_dict': {}
     }
     return render(request, 'horoscope/index.html', context)
@@ -60,12 +59,11 @@ class Person:
 
 def get_info_url_zodiac(request, url_zodiac: str):
     discript = zodiac_dict.get(url_zodiac)
-    zodiacs = list(zodiac_dict)
     data = {
         'description_zodiac': discript,
-        'sign': url_zodiac,                               #random random value from list
-        'zodiacs': zodiacs,                                                    #safe #slice:"2:" list[:2]
-        'translate' : translator_dict[url_zodiac]
+        'sign': url_zodiac,                               #random random value from list                                                  #safe #slice:"2:" list[:2]
+        'title': translator_dict[url_zodiac],
+        'translate': translator_dict,
     }
     response = render_to_string('horoscope/info_zodiac.html')
     #if discript:

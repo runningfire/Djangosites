@@ -16,8 +16,8 @@
 
     <h1>Приложение Гороскоп</h1>
     <ul>
-        {% for zodiac in zodiacs %}
-            <li><a href="{% url 'horoscope-name' url_zodiac=zodiac %}">{{zodiac|title}}</a></li>
+        {% for zodiac, trans in translate.items %}
+        <li><a href="{% url 'horoscope-name' url_zodiac=zodiac %}">{{trans|title}}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

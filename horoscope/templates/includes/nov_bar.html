@@ -1,7 +1,7 @@
 <nav>
     <a href="/horoscope">Главная</a>
     <a href="https://www.thevoicemag.ru/horoscope/weekly_main/vysokomerie-i-lyubov-k-spletnyam-samaya-razdrazhayushchaya-cherta-kazhdogo-znaka-zodiaka/">Источник</a>
-    {% for zodiac in zodiacs %}
-        <a href="{% url 'horoscope-name' url_zodiac=zodiac %}">{{ zodiac|title }}</a>
+    {% for zodiac, trans in translate.items %}
+        <a href="{% url 'horoscope-name' url_zodiac=zodiac %}">{{trans|title}}</a>
     {% endfor %}
 </nav>
